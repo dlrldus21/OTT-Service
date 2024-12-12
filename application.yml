@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: OTT
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  datasource:
+    url: jdbc:mysql://ls-2d048cddbf5c7dc34a6a15703950f16370ffcaee.cdue48seeu9d.ap-northeast-2.rds.amazonaws.com:3306/ott?serverTimezone=UTC&characterEncoding=UTF-8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: dbmasteruser
+    password: 12345678
+  jpa:
+    hibernate:
+      ddl-auto: update      #update create
+    properties:
+      hibernate:
+        format_sql: true  #??? sql system out? ??? ???
+        dialect: org.hibernate.dialect.MySQLDialect # MySQL 8에 맞는 Hibernate 방언 설정
+  thymeleaf:
+    prefix: classpath:/templates/     #???
+    suffix: .html  #???
+
+server:
+  servlet:
+    session:
+      tracking-modes: cookie
+
+logging:
+  level:
+    org.hibernate.SQL: debug  #??? sql? ??? ??? ????.
+    org.hibernate.orm.jdbc.bind: trace  #??? ?? 3.x, hibernate6

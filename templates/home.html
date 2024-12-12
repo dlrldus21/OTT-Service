@@ -1,0 +1,102 @@
+<html lang="ko" layout:decorate="~{layout/layout}" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<body layout:fragment="content">
+  <!-- header -->
+  <header id="home" class="bg-dark bg-opacity-50 py-5">
+    <div class="mt-5 text-center fw-bold container">
+      <h1 class="lh-base">최신 인기 작품 부터 고전 명작까지 <br>당신에게 맞는 장르에 추천 작품은?</h1>
+      <p class="mt-5 lh-lg">From the latest popular works to classic masterpieces
+        What genre do you recommend?</p>
+      <button type="button" class="btn btn-danger mt-3 btn-lg" data-bs-toggle="modal" data-bs-target="#loginModal">시작하기</button>
+      <!-- Modal -->
+      <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5 text-dark" id="loginModalLabel">이용 불가</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-dark">
+              로그인이 필요한 서비스 입니다.
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
+              <a th:href="@{/login}" class="btn btn-primary">로그인</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- header end -->
+  <!-- main -->
+  <section class="bg-black py-5 text-center" id="ott">
+    <div class="container overflow-hidden">
+      <div class="row pb-3 g-4">
+        <div class="col-sm-6 col-lg-4">
+          <a th:href="@{https://www.tving.com}"><img th:src="@{/images/tving.jpg}" alt="tving" class="img-fluid" style="width: 300px; height: 150px;"></a>
+        </div>
+        <div class="col-sm-6 col-lg-4">
+          <a th:href="@{https://www.watcha.com}"><img th:src="@{/images/watcha.png}" alt="watcha" class="img-fluid" style="width: 300px; height: 150px;"></a>
+        </div>
+        <div class="col-sm-6 col-lg-4">
+          <a th:href="@{https://www.coupangplay.com}"><img th:src="@{/images/coupangplay.jpg}" alt="cpy" class="img-fluid" style="width: 300px; height: 150px;"></a>
+        </div>
+        <div class="col-sm-6 col-lg-4">
+          <a th:href="@{https://www.disneyplus.com}"><img th:src="@{/images/disney.jpg}" alt="disney" class="img-fluid" style="width: 300px; height: 150px;"></a>
+        </div>
+        <div class="col-sm-6 col-lg-4">
+          <a th:href="@{https://www.netflix.com}"><img th:src="@{/images/netflix.jpg}" alt="netflix" class="img-fluid" style="width: 300px; height: 150px;"></a>
+        </div>
+        <div class="col-sm-6 col-lg-4">
+          <a th:href="@{https://www.wavve.com}"><img th:src="@{/images/wavve.jpg}" alt="wavve" class="img-fluid" style="width: 300px; height: 150px;"></a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- main end -->
+  <!-- FAQ -->
+  <section class="bg-dark bg-opacity-50">
+    <div class="container text-center p-5">
+      <h1 class="text-white my-3">자주 묻는 질문</h1>
+      <button type="button" class="btn btn-danger my-3" data-bs-toggle="modal" data-bs-target="#loginModal">질문하러가기</button>
+      <div class="accordion">
+        <div class="accordion-item">
+          <div class="accordion-item-header">
+            Q. EZENPLAY는 무엇인가요?
+          </div>
+          <div class="accordion-item-body">
+            <div class="accordion-item-body-content">
+              사용자가 제공한 성별과 연령대에 따라 OTT(온라인 동영상 서비스)
+              콘텐츠 시청 유형을 예측하는 기계 학습 모델을 구축하고, 예측 결과를 시각화하는 웹 애플리케이션입니다.
+              데이터 로드, 처리, 모델 훈련, 예측, 그리고 시각화의 전 과정을 포함하고 있습니다.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <div class="accordion-item-header">
+            Q. EZENPLAY는 누가 이용할 수 있나요?
+          </div>
+          <div class="accordion-item-body">
+            <div class="accordion-item-body-content">
+              회원 가입만 한다면 누구나 이용 가능합니다.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <div class="accordion-item-header">
+            Q. EZENPLAY에는 어떤 OTT가 포함 되어 있나요?
+          </div>
+          <div class="accordion-item-body">
+            <div class="accordion-item-body-content">
+              티빙(Tving), 웨이브(Wavve),시즌(KT Seezn),U+ 모바일,에브리온 TV,
+              네이버 시리즈온,곰TV,넷플릭스, 카카오 TV, 유튜브, 아마존 프라임 비디오, 왓챠,
+              ,쿠팡플레이, 아프리카 TV, 네이버 NOW,디즈니플러스, 애플 TV+ 가 포함 되어있습니다.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- FAQ end -->
+</body>
+</html>

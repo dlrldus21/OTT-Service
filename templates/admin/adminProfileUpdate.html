@@ -1,0 +1,38 @@
+<!-- adminMemberProfileUpdate.html -->
+<html lang="ko" layout:decorate="~{layout/layout}" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<body layout:fragment="content">
+    <!-- 프로필 업데이트 Section -->
+    <section class="container d-flex justify-content-center align-items-center mb-5">
+        <div class="col-md-6 profile-card text-center">
+            <h2 class="profile-header">프로필 업데이트</h2>
+            <p class="text-muted mb-4">Update Your Information</p>
+            <form th:action="@{/members/{memberid}/edit(id=${memberForm.id})}" th:object="${memberForm}" method="post">
+                <input type="hidden" th:field="*{id}"/>
+                <div class="mb-3">
+                    <label for="loginId" class="form-label mt-3">로그인 ID</label>
+                    <input type="text" id="loginId" th:field="*{loginId}" class="form-control" th:errorclass="field-error">
+                    <div class="field-error" th:errors="*{loginId}"></div>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label mt-3">패스워드</label>
+                    <input type="text" id="password" th:field="*{password}" class="form-control" th:errorclass="field-error" th:placeholder="*{password}">
+                    <div class="field-error" th:errors="*{password}"></div>
+                </div>
+                <div class="mb-3">
+                    <label for="name" class="form-label mt-3">이름</label>
+                    <input type="text" id="name" th:field="*{name}" class="form-control" th:errorclass="field-error">
+                    <div class="field-error" th:errors="*{name}"></div>
+                </div>
+                <div class="mb-3">
+                    <label for="grade" class="form-label mt-3">등급</label>
+                    <input type="text" id="grade" th:field="*{grade}" class="form-control" th:errorclass="field-error">
+                    <div class="field-error" th:errors="*{grade}"></div>
+                </div>
+                <button class="btn btn-dark w-100 mt-4" type="submit">저장하기</button>
+                <a th:href="@{/profile}" class="btn btn-danger w-100 mt-2" type="submit">이전</a>
+            </form>
+        </div>
+    </section>
+    <!-- 프로필 업데이트 Section 끝 -->
+</body>
+</html>

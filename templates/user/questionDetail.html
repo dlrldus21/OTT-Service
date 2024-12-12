@@ -1,0 +1,73 @@
+<html lang="ko" layout:decorate="~{layout/layout}" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<body layout:fragment="content">
+    <div class="container mt-5 pt-5">
+        <div class="header text-center">
+            <h2 class="text-white mt-3 py-3">질문 상세페이지</h2>
+        </div>
+        <h2 class="border-bottom py-2 text-white" th:text="${question.subject}"></h2>
+        <div class="row my-3 justify-content-center">
+            <div class="col-md-10 mb-3">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <div class="card-text" th:text="${question.content}">
+                        </div>
+                        <div class="d-flex justify-content-end">
+                            <div class="badge bg-light text-dark p-2 text-start">
+                                <span th:if="${question.author.loginId != null}" th:text="${question.author.loginId}">글쓴이</span>
+                                <div th:text="${#temporals.format(question.createDate, 'yyyy-MM-dd hh:mm')}"></div>
+                            </div>
+                        </div>
+                        <div class="my-3">
+                            <a th:href="@{|/qustion/modify/${question.id}|}" class="btn btn-sm btn-outline-secondary" th:if="${question.author.loginId != null and loginMember.loginId == question.author.loginId}" th:text="수정">수정</a>
+                            <a href="javaScript:void(0);" th:data-url="@{|/qustion/delete/${question.id}|}" class="delete btn btn-sm btn-outline-danger" th:if="${question.author.loginId != null and loginMember.loginId == question.author.loginId}" th:text="삭제">삭제</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-10 mb-3">
+                <h5 class="border-bottom my-3 py-2 text-white" th:text="|${#lists.size(question.answerList)}개의 답변이 있습니다.|"></h5>
+                <div class="card my-3 shadow" th:each="answer : ${question.answerList}">
+                    <div class="card-body">
+                        <div class="card-text" th:text="${answer.content}">
+                        </div>
+                        <div class="d-flex justify-content-end">
+                            <div class="badge bg-light text-dark p-2 text-start">
+                                <div class="mb-2">
+                                    <span th:if="${answer.author.loginId != null}" th:text="${answer.author.loginId}">글쓴이</span>
+                                    <div th:text="${#temporals.format(answer.createDate, 'yyyy-MM-dd hh:mm')}"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="my-3">
+                            <a th:href="@{|/answer/modify/${answer.id}|}" class="btn btn-sm btn-outline-secondary" th:if="${answer.author.loginId != null and loginMember.loginId == answer.author.loginId}" th:text="수정">수정</a>
+                            <a href="javaScript:void(0);" th:data-url="@{|/answer/delete/${answer.id}|}" class="delete btn btn-sm btn-outline-danger" th:if="${answer.author.loginId != null and loginMember.loginId == answer.author.loginId}" th:text="삭제">수정</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-10 mb-3">
+                <form method="post" th:action="@{/answer/create/{id} (id=${question.id})}" th:object="${answerForm}">
+                    <div class="alert alert-danger" role="alert" th:if="${#fields.hasAnyErrors()}">
+                        <div th:each="err : ${#fields.allErrors()}" th:text="${err}"></div>
+                    </div>
+                    <textarea class="form-control" rows="4" placeholder="답변을 입력하세요..." th:field="*{content}"></textarea>
+                    <div class="d-flex justify-content-end">
+                        <input type="submit" value="답변 등록" class="btn btn-primary my-2 mx-2">
+                        <a th:href="@{/question/list}" class="btn btn-dark my-2">이전</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+<script layout:fragment="script">
+    $(function (){
+        $(".delete").on('click', function (){
+            if(confirm("정말로 삭제하시겠습니까?")){
+                location.href = $(this).attr('data-url')
+            }
+        })
+    })
+</script>
+</html>

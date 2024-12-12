@@ -1,0 +1,36 @@
+<html lang="ko" layout:decorate="~{layout/layout}" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<body layout:fragment="content">
+<section class="container d-flex justify-content-center align-items-center mb-5">
+    <div class="col-md-6 profile-card text-center">
+        <h2 class="profile-header" th:text="${pageTitle}">관리자 페이지</h2>
+        <div class="mt-5">
+            <a class="btn btn-outline-danger" th:href="@{/ani-add}">애니메이션</a>
+        </div>
+        <div class="mt-3">
+            <a class="btn btn-outline-danger" th:href="@{/ani-add}">다큐멘터리</a>
+        </div>
+        <div class="mt-3">
+            <a class="btn btn-outline-danger" th:href="@{/ani-add}">드라마</a>
+        </div>
+        <div class="mt-3">
+            <a class="btn btn-outline-danger" th:href="@{/ani-add}">예능</a>
+        </div>
+        <div class="mt-3">
+            <a class="btn btn-outline-danger" th:href="@{/ani-add}">영화</a>
+        </div>
+        <div class="mt-3">
+            <a class="btn btn-outline-danger" th:href="@{/ani-add}">교육</a>
+        </div>
+        <div class="mt-3">
+            <a class="btn btn-outline-danger" th:href="@{/ani-add}">뉴스</a>
+        </div>
+        <div class="mt-3">
+            <a class="btn btn-outline-danger" th:href="@{/ani-add}">스포츠</a>
+        </div>
+        <div class="mt-3">
+            <a class="btn btn-outline-danger" th:href="@{/members}">멤버 관리</a>
+        </div>
+    </div>
+</section>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<html lang="ko" layout:decorate="~{layout/layout}" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<body layout:fragment="content">
+<div class="fixed-banner me-3 d-lg-block d-flex flex-column align-items-center text-center" style="margin: 0 auto;">
+    <img th:src="@{/images/house.jpg}" style="width: 250px;" class="img-fluid">
+    <p>주거 형태 내용을 확인할 수 있습니다.</p>
+    <a th:href="@{/index-j}" class="btn btn-primary mx-2" style="width: 130px;"> 놀러오세요</a>
+</div>
+<!-- 고객 센터 섹션 -->
+<section id="faq" class="bg-white bg-opacity-50" style="margin-top: 77px;">
+    <div class="py-5">
+        <h3 class="text-white d-flex justify-content-center">고객 센터</h3>
+    </div>
+</section>
+<div class="container text-center p-5">
+    <h1 class="text-white my-3">자주 묻는 질문</h1>
+    <div class="accordion">
+        <div class="accordion-item">
+            <div class="accordion-item-header">
+                Q. EZENPLAY는 무엇인가요?
+            </div>
+            <div class="accordion-item-body">
+                <div class="accordion-item-body-content">
+                    사용자가 제공한 성별과 연령대에 따라 OTT(온라인 동영상 서비스)
+                    콘텐츠 시청 유형을 예측하는 기계 학습 모델을 구축하고, 예측 결과를 시각화하는 웹 애플리케이션입니다.
+                    데이터 로드, 처리, 모델 훈련, 예측, 그리고 시각화의 전 과정을 포함하고 있습니다.
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <div class="accordion-item-header">
+                Q. EZENPLAY는 누가 이용할 수 있나요?
+            </div>
+            <div class="accordion-item-body">
+                <div class="accordion-item-body-content">
+                    회원 가입만 한다면 누구나 이용 가능합니다.
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <div class="accordion-item-header">
+                Q. EZENPLAY에는 어떤 OTT가 포함 되어 있나요?
+            </div>
+            <div class="accordion-item-body">
+                <div class="accordion-item-body-content">
+                    티빙(Tving), 웨이브(Wavve),시즌(KT Seezn),U+ 모바일,에브리온 TV,
+                    네이버 시리즈온,곰TV,넷플릭스, 카카오 TV, 유튜브, 아마존 프라임 비디오, 왓챠,
+                    ,쿠팡플레이, 아프리카 TV, 네이버 NOW,디즈니플러스, 애플 TV+ 가 포함 되어있습니다.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="customer-service container text-dark mb-0">  <!-- mb-0 추가 -->
+    <div class="text-center">
+        <h1 class="text-white">게시판</h1>
+    </div>
+    <div class="row">
+        <div class="d-flex justify-content-end">
+            <div class="input-group" style="max-width: 300px;">
+                <input type="text" id="search_kw" class="form-control" th:value="${kw}" style="height: 38px">
+                <button class="btn btn-outline-secondary" type="button" id="btn_search">찾기</button>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-3">
+        <div class="table-responsive">
+            <table class="table table-hover text-center">
+                <thead>
+                <tr>
+                    <th style="background-color: black; color: white;">번호</th>
+                    <th style="background-color: black; color: white;">제목</th>
+                    <th style="background-color: black; color: white;">글쓴이</th>
+                    <th style="background-color: black; color: white;">작성일시</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="qus, loop : ${paging}">
+                    <td th:text="${paging.getTotalElements() - (paging.number * paging.size) - loop.index}"></td>
+                    <td>
+                        <a th:href="@{/question/detail/{id} (id=${qus.id})}" th:text="${qus.subject}"></a>
+                        <span class="text-danger small ms-2" th:if="${#lists.size(qus.answerList) > 0}" th:text="${#lists.size(qus.answerList)}">댓글수</span>
+                    </td>
+                    <td th:if="${qus.author.loginId != null}" th:text="${qus.author.loginId}"></td>
+                    <td th:text="${#temporals.format(qus.createDate, 'yyyy-MM-dd hh:mm')}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="text-end mb-3 mt-3">
+        <a th:href="@{/question/create}" class="btn btn-secondary me-3">질문 등록하기</a>
+    </div>
+    <!--페이징처리시작-->
+    <div th:if="${paging != null}">
+        <ul class="pagination justify-content-center">
+            <li class="page-item" th:classappend="${!paging.hasPrevious()}?'disabled'">
+                <a class="page-link bg-black text-white" href="javascript:void(0)" th:data-page="${paging.number -1}">이전</a>
+            </li>
+            <li class="page-item" th:each="page : ${#numbers.sequence(0, paging.totalPages -1)}" th:classappend="${page == paging.number} ? 'active'" th:if="${page >= paging.number -5 and page <= paging.number+5}"><a class="page-link bg-secondary text-dark" th:text="${page+1}" href="javascript:void(0)" th:data-page="${page}">1</a></li>
+            <li class="page-item" th:classappend="${!paging.hasNext()} ? 'disabled'">
+                <a class="page-link bg-black text-white" href="javascript:void(0)" th:data-page="${paging.number+1}">다음</a>
+            </li>
+        </ul>
+    </div>
+    <!--페이징처리끝-->
+    <!--검색폼만들기-->
+    <form th:action="@{/question/list}" method="get" id="searchForm">
+        <input type="hidden" id="kw" name="kw" th:value="${kw}">
+        <input type="hidden" id="page" name="page" th:value="${paging.number}">
+    </form>
+
+</div>
+</body>
+<script layout:fragment="script">
+    $(function(){
+        //이전, 다음 페이징 버튼
+        $(".page-link").on('click', function (){
+            $('#page').val($(this).data('page'))
+            $('#searchForm').submit();
+        })
+
+        //찾기버튼
+        $("#btn_search").on('click', function (){
+            $('#kw').val($('#search_kw').val())
+            $('#page').val(0)  //검색버튼 클릭시 0페이지부터 찾는다
+            $('#searchForm').submit();
+        })
+    })
+</script>
+
+</html>
+

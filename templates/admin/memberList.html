@@ -1,0 +1,42 @@
+<html lang="ko" layout:decorate="~{layout/layout}" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<body layout:fragment="content">
+<div class="container">
+    <div class="py-5 text-center">
+        <h2 class="text-center mt-5 py-3 text-white">회원 목록</h2>
+        <div class="table-responsive">
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>아이디</th>
+                    <th>이름</th>
+                    <th class="d-none d-md-table-cell">비밀번호</th>
+                    <th>등급</th>
+                    <th>수정</th>
+                    <th>삭제</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="member : ${members}" class="text-center">
+                        <td th:text="${member.id}"></td>
+                        <td th:text="${member.loginId}">아이디</td>
+                        <td th:text="${member.name}">이름</td>
+                        <td th:text="${member.password}" class="d-none d-md-table-cell">비밀번호</td>
+                        <td th:text="${member.grade}">등급</td>
+                        <td>
+                            <a th:href="@{/members/{id}/edit(id=${member.id})}" role="button" class="btn btn-dark">수정</a>
+                        </td>
+                        <td>
+                            <a th:href="@{/members/{id}/delete(id=${member.id})}" role="button" class="btn btn-danger">삭제</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="text-end">
+            <a th:href="@{/admin-page}" type="button" class="btn btn-secondary">이전</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

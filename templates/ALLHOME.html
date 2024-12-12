@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EZENPLAY</title>
+    <link rel="icon" href="../images/logoicon.ico">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- navigation -->
+    <nav class="navbar fixed-top navbar-expand-md navbar-dark" style="background-color: rgba(0, 0, 0, 0.2);">
+        <div class="container-fluid justify-content-center">
+            <a href="#"><img src="./images/eplogo.png" alt="로고" style="width: 150px; height: 50px;"></a>
+            <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="offcanvas" data-bs-target="#menubar" aria-controls="menubar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="menubar" aria-labelledby="menubarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="menubarLabel">메뉴</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav mx-auto mb-2 mb-md-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#home">HOME</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#ott">OTT SERVICE</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#faq">FAQ?</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">MENU4</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">MENU5</a>
+                        </li>
+                        <!-- 로그인 버튼을 메뉴 항목으로 추가 -->
+                        <li class="nav-item d-md-none">
+                            <a class="nav-link" href="#">로그인</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <button class="btn btn-outline-light ms-3 d-none d-md-block" type="button">LOGIN  <i class="bi bi-gear"></i></button>
+        </div>
+    </nav>
+    <!-- navigation end -->
+    <!-- header -->
+    <header id="home">
+        <div class="my-5 text-center fw-bold container">
+            <h2 class="lh-base">최신 인기 작품 부터 고전 명작까지 <br>당신에게 맞는 장르에 추천 작품은?</h2>
+            <p class="mt-5 lh-lg">From the latest popular works to classic masterpieces 
+                What genre do you recommend?</p>
+            <button class="btn btn-danger mt-3 btn-lg" type="button">시작하기</button>
+        </div>
+    </header>
+    <!-- header end -->
+    <!-- main -->
+    <section class="bg-black py-5 text-center" id="ott">
+        <div class="container overflow-hidden">
+            <div class="row pb-3 g-4">
+                <div class="col-sm-6 col-lg-4">
+                    <a href="#"><img src="./images/tving.jpg" alt="pofol" class="img-fluid" style="width: 300px; height: 150px;"></a>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <a href="#"><img src="./images/watcha.png" alt="pofol" class="img-fluid" style="width: 300px; height: 150px;"></a>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <a href="#"><img src="./images/coupangplay.jpg" alt="pofol" class="img-fluid" style="width: 300px; height: 150px;"></a>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <a href="#"><img src="./images/disney.jpg" alt="pofol" class="img-fluid" style="width: 300px; height: 150px;"></a>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <a href="#"><img src="./images/netflix.jpg" alt="pofol" class="img-fluid" style="width: 300px; height: 150px;"></a>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <a href="#"><img src="./images/wavve.jpg" alt="pofol" class="img-fluid" style="width: 300px; height: 150px;"></a>
+                </div>
+            </div>
+        </div>
+       </section>
+    <!-- main end -->
+    <!-- FAQ -->
+    <section id="faq" class="bg-dark bg-opacity-50">
+    <div class="container text-center p-5">
+        <h1 class="text-white my-3">자주 묻는 질문</h1>
+        <a href="#" class="btn btn-danger my-3">질문하러가기</a>
+    <div class="accordion">
+        <div class="accordion-item">
+          <div class="accordion-item-header">
+            자주 묻는 질문 01
+          </div>
+          <div class="accordion-item-body">
+            <div class="accordion-item-body-content">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. A, alias earum nihil porro magnam quam atque labore minima accusantium sint dolore obcaecati. Quibusdam quos quod placeat velit dolores suscipit maiores atque? Nemo hic perferendis sunt totam repudiandae quasi exercitationem vero.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <div class="accordion-item-header">
+            자주 묻는 질문 02
+          </div>
+          <div class="accordion-item-body">
+            <div class="accordion-item-body-content">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ullam, possimus! Rem doloribus tempora similique repellat delectus aliquid beatae ad iste in omnis! Voluptatem perspiciatis nesciunt voluptatibus quos nihil quae, tenetur error numquam molestias? Aperiam omnis quidem velit alias mollitia error.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <div class="accordion-item-header">
+              자주 묻는 질문 03
+          </div>
+          <div class="accordion-item-body">
+            <div class="accordion-item-body-content">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae, esse deserunt. Est perferendis dolore exercitationem ut velit repellendus quaerat quo excepturi perspiciatis tempore, eaque illum possimus nam ipsa nihil fugit adipisci quas. Soluta officia iure quasi consequuntur laborum dolore quaerat.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <div class="accordion-item-header">
+            자주 묻는 질문 04
+          </div>
+          <div class="accordion-item-body">
+            <div class="accordion-item-body-content">
+               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia, quis expedita nostrum unde adipisci voluptatum ut eum earum molestiae natus, sint culpa, quidem a. Blanditiis rem totam modi ratione quaerat provident. Nemo impedit odit similique placeat eligendi quam ipsum nam.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <div class="accordion-item-header">
+              자주 묻는 질문 05
+          </div>
+          <div class="accordion-item-body">
+            <div class="accordion-item-body-content">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos officiis repudiandae rem reprehenderit assumenda natus vel deserunt dolores! Autem exercitationem nihil dolor, eos provident quod illum aliquam neque officiis? Quisquam sunt eius delectus, nisi iusto commodi quod earum nihil voluptatibus?
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </section>
+    <!-- FAQ end -->
+    <!-- footer -->
+    <footer class="bg-dark text-white text-center py-3">
+        <div class="container">
+            <div class="row d-flex justify-content-evenly text-center text-white pt-5 mx-4">
+                <div class="col-md-4">
+                    <h4><a href="./index.html" class="link-light text-decoration-none pb-5"><img src="./images/eplogo.png" alt="로고" style="width: 150px; height: 50px;"></a></h4>
+                    <p>이름 : abcd@gmail.com</p>
+                    <p>이름 : abcd@gmail.com</p>
+                    <p>이름 : abcd@gmail.com</p>
+                    <p>이름 : abcd@gmail.com</p>
+                    <p>이름 : abcd@gmail.com</p>
+                </div>
+    
+                <div class="col-md-4 px-4">
+                    <h3 class="fw-bold my-2 text-danger">About Us</h3>
+                    <ul class="list-unstyled">
+                        <li><a href="./profile.html" class="link-light text-decoration-none">Home</a></li>
+                        <li><a href="./private-interior.html" class="link-light text-decoration-none">OTT장르추천</a></li>
+                        <li><a href="./business-interior.html" class="link-light text-decoration-none">인덱스2</a></li>
+                        <li><a href="./contact.html" class="link-light text-decoration-none">게시판</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4">
+                    <h3 class="fw-bold my-2 text-danger">OTT 종류</h3>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="link-light text-decoration-none">유튜브</a></li>
+                        <li><a href="#" class="link-light text-decoration-none">넷플릭스</a></li>
+                        <li><a href="#" class="link-light text-decoration-none">디지니+</a></li>
+                        <li><a href="#" class="link-light text-decoration-none">TVING</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="container text-center text-white">
+                <p class="py-4 mb-0">
+                    <i class="bi bi-c-circle"></i> ALL RIGHT RESERVED BY
+                    <a href="https://mr.ezenac.co.kr/" target="_blank"
+                    class="gugi-font link-danger text-decoration-none">EZENPLAY</a>
+                </p>
+            </div>
+        </div>    
+    </footer>
+    <!-- footer end -->
+    <script src="../script/acordian_script.js"></script>
+</body>
+</html>

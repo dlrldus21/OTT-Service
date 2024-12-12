@@ -1,0 +1,1579 @@
+<html lang="ko" layout:decorate="~{layout/layout}" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<body layout:fragment="content" class="body-index">
+<section class="mt-5 pt-5">
+    <div class="container">
+        <h1 class="text-white fw-bold">영화</h1>
+
+        <div id="movieCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <!-- 첫 번째 슬라이드 -->
+                <div class="carousel-item active">
+                    <div class="row">
+                        <!-- 카드 1 -->
+                        <div class="col-md-4 mb-4">
+                            <div class="card">
+                                <img th:src="@{/images/movie1.jpg}" class="card-img-top" alt="무도실무관 포스터" data-bs-toggle="modal" data-bs-target="#movie1" style="width: 100%; height: 600px; object-fit: cover;">
+                            </div>
+                        </div>
+
+                        <!-- 카드 2 -->
+                        <div class="col-md-4 mb-4">
+                            <div class="card">
+                                <img th:src="@{/images/movie2.jpg}" class="card-img-top" alt="베테랑2 포스터" data-bs-toggle="modal" data-bs-target="#movie2" style="width: 100%; height: 600px; object-fit: cover;">
+                            </div>
+                        </div>
+
+                        <!-- 카드 3 -->
+                        <div class="col-md-4 mb-4">
+                            <div class="card">
+                                <img th:src="@{/images/movie3.jpg}" class="card-img-top" alt="범죄도시4 포스터" data-bs-toggle="modal" data-bs-target="#movie3" style="width: 100%; height: 600px; object-fit: cover;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 두 번째 슬라이드 -->
+                <div class="carousel-item">
+                    <div class="row">
+                        <!-- 카드 4 -->
+                        <div class="col-md-4 mb-4">
+                            <div class="card">
+                                <img th:src="@{/images/movie4.jpg}" class="card-img-top" alt="영화4 포스터" data-bs-toggle="modal" data-bs-target="#movie4" style="width: 100%; height: 600px; object-fit: cover;">
+                            </div>
+                        </div>
+
+                        <!-- 카드 5 -->
+                        <div class="col-md-4 mb-4">
+                            <div class="card">
+                                <img th:src="@{/images/movie5.jpg}" class="card-img-top" alt="영화5 포스터" data-bs-toggle="modal" data-bs-target="#movie5" style="width: 100%; height: 600px; object-fit: cover;">
+                            </div>
+                        </div>
+
+                        <!-- 카드 6 -->
+                        <div class="col-md-4 mb-4">
+                            <div class="card">
+                                <img th:src="@{/images/movie6.jpg}" class="card-img-top" alt="영화6 포스터" data-bs-toggle="modal" data-bs-target="#movie6" style="width: 100%; height: 600px; object-fit: cover;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 좌우 화살표 (포스터 바깥으로 이동) -->
+            <!-- 이전 화살표 -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#movieCarousel" data-bs-slide="prev" style="position: absolute; top: 50%; transform: translateY(-50%); left: -150px;">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+
+            <!-- 다음 화살표 -->
+            <button class="carousel-control-next" type="button" data-bs-target="#movieCarousel" data-bs-slide="next" style="position: absolute; top: 50%; transform: translateY(-50%); right: -150px;">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+        <!-- Modals (여기에도 영화 포스터에 맞는 모달을 추가해야 합니다) -->
+        <!-- 영화 1 모달 -->
+        <div class="modal fade" id="movie1" tabindex="-1" aria-labelledby="movie1Label" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="movie1Label">무도실무관</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="ratio ratio-16x9">
+                            <iframe src="https://www.youtube.com/embed/cbJykA1m20s?si=0ulB4I6wPbZj9Ea1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                        <h4>무도실무관</h4>
+                        <p>태권도, 검도, 유도 합이 9단인 이정도가, 범죄를 감지하는 촉과 무도 실력을 알아본 보호관찰관 김선민과 함께 전자발찌 대상자들을 감시하고 범죄를 예방하는 ‘무도실무관’ 일을 하게 되면서 벌어지는 이야기</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">닫기</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 영화 2 모달 -->
+        <div class="modal fade" id="movie2" tabindex="-1" aria-labelledby="movie2Label" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="movie2Label">영화2</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="ratio ratio-16x9">
+                            <iframe src="https://www.youtube.com/embed/hcKp68DtBb0?si=A5I0DLbDSgDoLuDK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                        <h4>베테랑</h4>
+                        <p>한 번 꽂힌 것은 무조건 끝을 보는 행동파 ‘서도철’(황정민), 20년 경력의 승부사 ‘오팀장’(오달수), 위장 전문 홍일점 ‘미스봉’(장윤주), 육체파 ‘왕형사’(오대환), 막내 ‘윤형사’(김시후)까지 겁 없고, 못 잡는 것 없고, 봐 주는 것 없는 특수 강력사건 담당 광역수사대. 오랫동안 쫓던 대형 범죄를 해결한 후 숨을 돌리려는 찰나, 서도철은 재벌 3세 ‘조태오’(유아인)를 만나게 된다. 세상 무서울 것 없는 안하무인의 조태오와 언제나 그의 곁을 지키는 오른팔 ‘최상무’(유해진). 서도철은 의문의 사건을 쫓던 중 그들이 사건의 배후에 있음을 직감한다. 건들면 다친다는 충고에도 불구하고 포기하지 않는 서도철의 집념에 판은 걷잡을 수 없이 커져가고 조태오는 이를 비웃기라도 하듯 유유히 포위망을 빠져 나가는데… 베테랑 광역수사대 VS 유아독존 재벌 3세 2015년 여름, 자존심을 건 한판 대결이 시작된다!</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">닫기</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 영화 3 모달 -->
+        <div class="modal fade" id="movie3" tabindex="-1" aria-labelledby="movie3Label" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="movie3Label">범죄도시4</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="ratio ratio-16x9">
+                            <iframe src="https://www.youtube.com/embed/pMAPj6WVsT4?si=w0cq7rjN-r63VdbS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                        <h4>범죄도시4</h4>
+                        <p>2024년 4월 24일에 개봉한 한국 영화. 범죄도시 시리즈의 4편이자, 시리즈 1부의 마지막 작품으로 사이버 범죄 및 도박, 재외국민 납치 및 강제노동을 다룬다.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">닫기</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 영화 4 모달 -->
+        <div class="modal fade" id="movie4" tabindex="-1" aria-labelledby="movie4Label" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="movie4Label">영화4</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="ratio ratio-16x9">
+                            <iframe src="https://www.youtube.com/embed/dlSkyNLOncY?si=WZDUktBvY7HhAq0u" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                        <h4>해리포터</h4>
+                        <p>해리는 학교에서 마법을 배우며 여러 모험을 겪고, 그 과정에서 어둠의 마법사인 볼드모트와 맞서 싸우게 됩니다. 시리즈를 통해 해리는 자신의 정체성과 운명, 그리고 사랑과 우정의 의미를 발견하게 되며, 결국 볼드모트와의 최후의 결전에서 중요한 역할을 하게 됩니다.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">닫기</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 영화 5 모달 -->
+        <div class="modal fade" id="movie5" tabindex="-1" aria-labelledby="movie5Label" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="movie5Label">영화5</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="ratio ratio-16x9">
+                            <iframe src="https://www.youtube.com/embed/cnIOq6P8PUU?si=iytvWAyB7-kIaxgL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                        <h4>위대한 쇼맨</h4>
+                        <p>불가능한 꿈, 그 이상의 쇼! 쇼 비즈니스의 창시자이자, 꿈의 무대로 전세계를 매료시킨 남자 ‘바넘’의 이야기에서 영감을 받아 탄생한 오리지널 뮤지컬 영화 '위대한 쇼맨'. '레미제라블' 이후 다시 뮤지컬 영화로 돌아온 휴 잭맨부터 잭 에프론, 미셸 윌리엄스, 레베카 퍼거슨, 젠다야까지 할리우드 최고의 배우들이 합류해 환상적인 앙상블을 선보인다. 여기에 '미녀와 야수' 제작진과 '라라랜드' 작사팀의 합류로 더욱 풍성해진 비주얼과 스토리, 음악까지 선보일 '위대한 쇼맨'은 ‘우리는 누구나 특별하다’는 메시지로 관객들에게 재미는 물론, 감동까지 선사할 것이다. THIS IS ME! 우리는 누구나 특별하다!</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">닫기</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 영화 6 모달 -->
+        <div class="modal fade" id="movie6" tabindex="-1" aria-labelledby="movie6Label" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="movie6Label">영화5</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                    <div class="modal-body">
+                        <div class="ratio ratio-16x9">
+                            <iframe src="https://www.youtube.com/embed/SA2-nvS_Vlo?si=OU1hLINXxs_qyUWr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                        <h4>상견니</h4>
+                        <p>2009년, '리쯔웨이'와 '황위쉬안'은 밀크티 가게에서 우연히 재회한다. 처음 만났지만 마치 오래전부터 알고 있었던 것 같은 기시감과 묘한 설렘을 느끼는 두 사람. 이들은 사계절을 함께 보내며 가까워지고, 2010년의 마지막 날, 함께 새해를 맞이하며 연인이 된다. 2017년, 황위쉬안의 인생에 예상치 못한 변화가 생긴다. 해외 발령을 받게 된 것. 황위쉬안은 이 제안을 받아들이고 새로운 여정을 시작하지만 이 선택은 그녀의 미래를 바꿀 뿐만 아니라, 리쯔웨이와 '모쥔제', 그리고 그녀가 아직 모르는 '천윈루'의 운명까지 뒤바꿔 놓는데... 이제, 이들은 수없이 뒤엉킨 타임라인 속에서 서로를 구하기 위해 낡은 테이프 속 들려오는 노래 '라스트 댄스'를 따라 달려가기 시작한다</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">닫기</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h1 class="text-white fw-bold">드라마</h1>
+
+        <div id="dramaCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <!-- 첫 번째 슬라이드 -->
+                <div class="carousel-item active">
+                    <div class="row">
+                        <!-- 카드 1 -->
+                        <div class="col-md-4 mb-4">
+                            <div class="card">
+                                <img th:src="@{/images/drama1.png}" class="card-img-top" alt="드라마1 포스터" data-bs-toggle="modal" data-bs-target="#drama1" style="width: 100%; height: 600px; object-fit: cover;">
+                            </div>
+                        </div>
+
+                        <!-- 카드 2 -->
+                        <div class="col-md-4 mb-4">
+                            <div class="card">
+                                <img th:src="@{/images/drama2.jpg}" class="card-img-top" alt="드라마2 포스터" data-bs-toggle="modal" data-bs-target="#drama2" style="width: 100%; height: 600px; object-fit: cover;">
+                            </div>
+                        </div>
+
+                        <!-- 카드 3 -->
+                        <div class="col-md-4 mb-4">
+                            <div class="card">
+                                <img th:src="@{/images/drama3.jpg}" class="card-img-top" alt="드라마3 포스터" data-bs-toggle="modal" data-bs-target="#drama3" style="width: 100%; height: 600px; object-fit: cover;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 두 번째 슬라이드 -->
+                <div class="carousel-item">
+                    <div class="row">
+                        <!-- 카드 4 -->
+                        <div class="col-md-4 mb-4">
+                            <div class="card">
+                                <img th:src="@{/images/drama4.jpg}" class="card-img-top" alt="드라마4 포스터" data-bs-toggle="modal" data-bs-target="#drama4" style="width: 100%; height: 600px; object-fit: cover;">
+                            </div>
+                        </div>
+
+                        <!-- 카드 5 -->
+                        <div class="col-md-4 mb-4">
+                            <div class="card">
+                                <img th:src="@{/images/drama5.jpg}" class="card-img-top" alt="드라마5 포스터" data-bs-toggle="modal" data-bs-target="#drama5" style="width: 100%; height: 600px; object-fit: cover;">
+                            </div>
+                        </div>
+
+                        <!-- 카드 6 -->
+                        <div class="col-md-4 mb-4">
+                            <div class="card">
+                                <img th:src="@{/images/drama6.jpg}" class="card-img-top" alt="드라마6 포스터" data-bs-toggle="modal" data-bs-target="#drama6" style="width: 100%; height: 600px; object-fit: cover;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 좌우 화살표 (포스터 바깥으로 이동) -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#dramaCarousel" data-bs-slide="prev" style="position: absolute; top: 50%; transform: translateY(-50%); left: -150px;">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#dramaCarousel" data-bs-slide="next" style="position: absolute; top: 50%; transform: translateY(-50%); right: -150px;">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+        <!-- Modals (여기에도 영화 포스터에 맞는 모달을 추가해야 합니다) -->
+        <!-- 드라마 1 모달 -->
+        <div class="modal fade" id="drama1" tabindex="-1" aria-labelledby="drama1Label" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="drama1Label">엄마친구아들</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="ratio ratio-16x9">
+                            <iframe src="https://www.youtube.com/embed/H8NENM6SbBM?si=cknlHpyDX-pezYWf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                        <h4>엄마친구아들</h4>
+                        <p>오류 난 인생을 재부팅하려는 여자와 그의 살아있는 흑역사인 '엄마친구아들'이 벌이는 파란만장 동네 한 바퀴 로맨스</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">닫기</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 드라마 2 모달 -->
+        <div class="modal fade" id="drama2" tabindex="-1" aria-labelledby="drama2Label" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="drama2Label">나의 해리에게</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="ratio ratio-16x9">
+                            <iframe src="https://www.youtube.com/embed/nm2fR-CB2SU?si=ZVFxhZpOm7FtAeGg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                        <h4>나의 해리에게</h4>
+                        <p>마음 속 깊은 상처로 새로운 인격이 발현된 아나운서 ‘은호’와 마음의 상처를 꼭꼭 감춰 둔 구남친 ‘현오’의 새로고침 치유 로맨스</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">닫기</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 드라마 3 모달 -->
+        <div class="modal fade" id="drama3" tabindex="-1" aria-labelledby="drama3Label" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="drama3Label">지옥에서 온 판사</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="ratio ratio-16x9">
+                            <iframe src="https://www.youtube.com/embed/XZU2_DXf4sE?si=XWtaEy_GKJBW7K5X" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                        <h4>지옥에서 온 판사</h4>
+                        <p>‘이제부터 진짜 재판을 시작할게! 지옥으로!’ 판사의 몸에 들어간 악마 ‘강빛나’가 지옥같은 현실에서 인간적인 열혈형사 ‘한다온’을 만나 죄인을 처단하며 진정한 판사로 거듭나는 선악공존 사이다액션 판타지</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">닫기</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 드라마 4 모달 -->
+        <div class="modal fade" id="drama4" tabindex="-1" aria-labelledby="drama4Label" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="drama4Label">더 글로리</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="ratio ratio-16x9">
+                            <iframe src="https://www.youtube.com/embed/YQtgHb8tkYM?si=BGjF3NziLQNylbFT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                        <h4>더 글로리</h4>
+                        <p>고등학교 동급생들의 지독한 괴롭힘, 하지만 도움을 청할 곳은 그 어디에도 없다. 그렇게 절망의 늪에 빠진 문동은이 어느 날 새로운 삶의 목표를 발견한다.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">닫기</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 드라마 5 모달 -->
+        <div class="modal fade" id="drama5" tabindex="-1" aria-labelledby="drama5Label" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="drama5Label">응답하라 1988</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="ratio ratio-16x9">
+                            <iframe src="https://www.youtube.com/embed/HIhjLnNjBXY?si=IVv3XviO5T-ywphK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                        <h4>응답하라 1988</h4>
+                        <p>1988년, 쌍문동 골목길. 즐거움과 아픔을 함께 나누던 다섯 친구가 있다. 동네에서 함께 자라 서로의 인생을 함께한 청춘들. 이들을 중심으로 다섯 가족의 따뜻한 이야기가 펼쳐진다.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">닫기</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 드라마 6 모달 -->
+        <div class="modal fade" id="drama6" tabindex="-1" aria-labelledby="drama6Label" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="drama6Label">슬기로운 의사생활</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                    <div class="modal-body">
+                        <div class="ratio ratio-16x9">
+                            <iframe src="https://www.youtube.com/embed/RTRZrJ3q_Q4?si=BMU7oYn3KxLhV71F" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                        <h4>슬기로운 의사생활</h4>
+                        <p>탄생과 죽음이 공존하는, 인생의 축소판이라고 불리는 병원에서 특별한 하루하루를 살아가는 사람들의 이야기를 그린 드라마</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">닫기</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h1 class="text-white fw-bold">예능</h1>
+
+        <div id="enterCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <!-- 첫 번째 슬라이드 -->
+                <div class="carousel-item active">
+                    <div class="row">
+                        <!-- 카드 1 -->
+                        <div class="col-md-4 mb-4">
+                            <div class="card">
+                                <img th:src="@{/images/enter1.jpg}" class="card-img-top" alt="흑백요리사" data-bs-toggle="modal" data-bs-target="#enter1" style="width: 100%; height: 600px; object-fit: cover;">
+                            </div>
+                        </div>
+
+                        <!-- 카드 2 -->
+                        <div class="col-md-4 mb-4">
+                            <div class="card">
+                                <img th:src="@{/images/enter2.jpg}" class="card-img-top" alt="enter2" data-bs-toggle="modal" data-bs-target="#enter2" style="width: 100%; height: 600px; object-fit: cover;">
+                            </div>
+                        </div>
+
+                        <!-- 카드 3 -->
+                        <div class="col-md-4 mb-4">
+                            <div class="card">
+                                <img th:src="@{/images/enter3.jpg}" class="card-img-top" alt="enter3 포스터" data-bs-toggle="modal" data-bs-target="#enter3" style="width: 100%; height: 600px; object-fit: cover;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 두 번째 슬라이드 -->
+                <div class="carousel-item">
+                    <div class="row">
+                        <!-- 카드 4 -->
+                        <div class="col-md-4 mb-4">
+                            <div class="card">
+                                <img th:src="@{/images/enter4.jpg}" class="card-img-top" alt="엔터4 포스터" data-bs-toggle="modal" data-bs-target="#enter4" style="width: 100%; height: 600px; object-fit: cover;">
+                            </div>
+                        </div>
+
+                        <!-- 카드 5 -->
+                        <div class="col-md-4 mb-4">
+                            <div class="card">
+                                <img th:src="@{/images/enter5.jpg}" class="card-img-top" alt="엔터5 포스터" data-bs-toggle="modal" data-bs-target="#enter5" style="width: 100%; height: 600px; object-fit: cover;">
+                            </div>
+                        </div>
+
+                        <!-- 카드 6 -->
+                        <div class="col-md-4 mb-4">
+                            <div class="card">
+                                <img th:src="@{/images/enter6.jpg}" class="card-img-top" alt="엔터6 포스터" data-bs-toggle="modal" data-bs-target="#enter6" style="width: 100%; height: 600px; object-fit: cover;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 좌우 화살표 (포스터 바깥으로 이동) -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#enterCarousel" data-bs-slide="prev" style="position: absolute; top: 50%; transform: translateY(-50%); left: -150px;">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#enterCarousel" data-bs-slide="next" style="position: absolute; top: 50%; transform: translateY(-50%); right: -150px;">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+        <!-- Modals (여기에도 영화 포스터에 맞는 모달을 추가해야 합니다) -->
+        <!-- 엔터 1 모달 -->
+        <div class="modal fade" id="enter1" tabindex="-1" aria-labelledby="enter1Label" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="enter1Label">흑백요리사 : 요리 계급 전쟁</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="ratio ratio-16x9">
+                            <iframe src="https://www.youtube.com/embed/vebF7wUQLMo?si=sWGd2Ux5wMYEj7VS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                        <h4>흑백요리사 : 요리 계급 전쟁</h4>
+                        <p>경력과 장르를 가리지 않는다. 그저 요리만 잘하면 된다. 레스토랑 셰프부터 방구석 요리왕까지, 맛에 일가견이 있는 사람들의 경쟁. 그 어디에서도 볼 수 없던 치열한 요리 대결이 시작된다.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">닫기</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 엔터 2 모달 -->
+        <div class="modal fade" id="enter2" tabindex="-1" aria-labelledby="enter2Label" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="enter2Label">삼시세끼 Light</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="ratio ratio-16x9">
+                            <iframe src="https://www.youtube.com/embed/nyX8jWE1CFM?si=qfA8KezOtwQ9iAzz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                        <h4>삼시세끼 Light</h4>
+                        <p>어디서든 밥 한 그릇 뚝딱 차려내는 차셰프와 <br>더욱 노련해진 만능 금손 참바다 씨 <br>어느덧 10년째 밥 친구, <br>차승원 & 유해진이 함께 할 세끼하우스는 과연 어디일까?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">닫기</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 엔터 3 모달 -->
+        <div class="modal fade" id="enter3" tabindex="-1" aria-labelledby="enter3Label" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="enter3Label">마스터셰프 코리아2</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="ratio ratio-16x9">
+                            <iframe src="https://www.youtube.com/embed/dDBpKPHkGJY?si=JyHwb1Nt46JGbN9z" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                        <h4>마스터셰프 코리아2</h4>
+                        <p>도전자들의 요리에 대한 열정 하나로 서바이벌 그 이상의 감동을 전했던 마스터셰프 코리아. <br>한층 더 스펙터클해진 규모로 대한민국 두 번째 마스터셰프를 찾기 위한 여정이 시작됩니다.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">닫기</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 엔터 4 모달 -->
+        <div class="modal fade" id="enter4" tabindex="-1" aria-labelledby="enter4Label" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="enter4Label">무한도전</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="ratio ratio-16x9">
+                            <iframe src="https://www.youtube.com/embed/i0WYohRsc2s?si=xArYsnXI_1wAU5Xg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                        <h4>무한도전</h4>
+                        <p>톡톡 튀는 아이디어 구성으로 매주 새로운 상황 속에서 펼쳐 지는 여섯 남자의 좌충우돌 도전기!</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">닫기</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 엔터 5 모달 -->
+        <div class="modal fade" id="enter5" tabindex="-1" aria-labelledby="enter5Label" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="enter5Label">복면가왕</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="ratio ratio-16x9">
+                            <iframe src="https://www.youtube.com/embed/LK6XlG_SFUw?si=HKt1cXy0Uo1Fr29O" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                        <h4>복면가왕</h4>
+                        <p>나이, 신분, 직종을 숨긴 스타들이 목소리만으로 실력을 뽐내는 음악 버라이어티 프로그램</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">닫기</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 엔터 6 모달 -->
+        <div class="modal fade" id="enter6" tabindex="-1" aria-labelledby="enter6Label" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="enter6Label">미운 우리 새끼</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                    <div class="modal-body">
+                        <div class="ratio ratio-16x9">
+                            <iframe src="https://www.youtube.com/embed/sMgiDR6EiVc?si=IEZMsrp5zpYCy-jI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                        <h4>미운 우리 새끼</h4>
+                        <p>엄마가 화자가 되어 아들의 일상을 관찰하고, 육아일기라는 장치를 통해 순간을 기록하는 프로그램</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">닫기</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h1 class="text-white fw-bold">다큐멘터리</h1>
+
+        <div id="docCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <!-- 첫 번째 슬라이드 -->
+                <div class="carousel-item active">
+                    <div class="row">
+                        <!-- 카드 1 -->
+                        <div class="col-md-4 mb-4">
+                            <div class="card">
+                                <img th:src="@{/images/daq1.jpg}" class="card-img-top" alt="다큐1" data-bs-toggle="modal" data-bs-target="#doc1" style="width: 100%; height: 600px; object-fit: cover;">
+                            </div>
+                        </div>
+
+                        <!-- 카드 2 -->
+                        <div class="col-md-4 mb-4">
+                            <div class="card">
+                                <img th:src="@{/images/daq2.jpg}" class="card-img-top" alt="doc2" data-bs-toggle="modal" data-bs-target="#doc2" style="width: 100%; height: 600px; object-fit: cover;">
+                            </div>
+                        </div>
+
+                        <!-- 카드 3 -->
+                        <div class="col-md-4 mb-4">
+                            <div class="card">
+                                <img th:src="@{/images/daq3.jpg}" class="card-img-top" alt="doc3 포스터" data-bs-toggle="modal" data-bs-target="#doc3" style="width: 100%; height: 600px; object-fit: cover;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 두 번째 슬라이드 -->
+                <div class="carousel-item">
+                    <div class="row">
+                        <!-- 카드 4 -->
+                        <div class="col-md-4 mb-4">
+                            <div class="card">
+                                <img th:src="@{/images/daq4.jpg}" class="card-img-top" alt="doc4 포스터" data-bs-toggle="modal" data-bs-target="#doc4" style="width: 100%; height: 600px; object-fit: cover;">
+                            </div>
+                        </div>
+
+                        <!-- 카드 5 -->
+                        <div class="col-md-4 mb-4">
+                            <div class="card">
+                                <img th:src="@{/images/daq5.jpg}" class="card-img-top" alt="doc5 포스터" data-bs-toggle="modal" data-bs-target="#doc5" style="width: 100%; height: 600px; object-fit: cover;">
+                            </div>
+                        </div>
+
+                        <!-- 카드 6 -->
+                        <div class="col-md-4 mb-4">
+                            <div class="card">
+                                <img th:src="@{/images/daq6.jpg}" class="card-img-top" alt="doc6 포스터" data-bs-toggle="modal" data-bs-target="#doc6" style="width: 100%; height: 600px; object-fit: cover;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 좌우 화살표 (포스터 바깥으로 이동) -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#docCarousel" data-bs-slide="prev" style="position: absolute; top: 50%; transform: translateY(-50%); left: -150px;">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#docCarousel" data-bs-slide="next" style="position: absolute; top: 50%; transform: translateY(-50%); right: -150px;">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+        <!-- Modals (여기에도 영화 포스터에 맞는 모달을 추가해야 합니다) -->
+        <!-- 다큐 1 모달 -->
+        <div class="modal fade" id="doc1" tabindex="-1" aria-labelledby="doc1Label" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="doc1Label">Our Planet</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="ratio ratio-16x9">
+                            <iframe src="https://www.youtube.com/embed/aETNYyrqNYE?si=9LonK0l7zWXyHm6d" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                        <h4>Our Planet</h4>
+                        <p>이 시리즈는 8개의 다른 생태계의 야생 동물과 자연의 경이로움에 초점을 맞추고 있으며, 전통적인 자연 다큐멘터리보다 인간이 환경에 미치는 영향 에 더 중점을 두고 기후 변화가 모든 생명체에 어떤 영향을 미치는지에 중점을 두고 있다는 점에서 주목을 받고 있습니다.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">닫기</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 다큐 2 모달 -->
+        <div class="modal fade" id="doc2" tabindex="-1" aria-labelledby="doc2Label" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="doc2Label">The Social Dilemma</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="ratio ratio-16x9">
+                            <iframe src="https://www.youtube.com/embed/uaaC57tcci0?si=26TmHB8eenSx8aZT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                        <h4>The Social Dilemma</h4>
+                        <p>SNS가 현대인의 일상을 지배하고 있는 시대가 시작되면서, 인터넷상에서 남에게 보이는 모습에 신경 쓰는 사람들이 늘어나고 있다. 이에 유명 SNS 기업에 몸을 담았던 직원들이 무분별한 SNS 사용을 맹렬하게 비판한다.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">닫기</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 다큐 3 모달 -->
+        <div class="modal fade" id="doc3" tabindex="-1" aria-labelledby="doc3Label" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="doc3Label">Tiger King</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="ratio ratio-16x9">
+                            <iframe src="https://www.youtube.com/embed/acTdxsoa428?si=iOOlvB1RlIAVMAan" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                        <h4>Tiger King</h4>
+                        <p>Tiger King은 전직 동물원 관리인이자 유죄 판결을 받은 범죄자인 조 엑조틱 의 삶에 대한미국의 실제 범죄 다큐멘터리 TV 시리즈입니다.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">닫기</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 다큐 4 모달 -->
+        <div class="modal fade" id="doc4" tabindex="-1" aria-labelledby="doc4Label" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="doc4Label">아마존의 눈물</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="ratio ratio-16x9">
+                            <iframe src="https://youtube.com/embed/nQdx1crtu18?si=E7jBe61GC4Q7O1Xi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                        <h4>아마존의 눈물</h4>
+                        <p>
+                            아마존의 눈물 : 거대한 아마존 밀림 한가운데, 자신들만의 삶을 살아가는 원시부족들이 있다. 조에를 비롯해 야노마미, 마티스, 마루보, 아쿤슈, 자미나와, 와우라 총 7개 부족의 인디오들을 만난다.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">닫기</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 다큐 5 모달 -->
+        <div class="modal fade" id="doc5" tabindex="-1" aria-labelledby="doc5Label" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="doc5Label">Man Vs Wild</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="ratio ratio-16x9">
+                            <iframe src="https://www.youtube.com/embed/oa6N7agxizw?si=awlTuVNHLwi9DQIr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                        <h4>맨 vs 와일드</h4>
+                        <p>영국 공수특전단 출신이자 생존술 전문가인 베어 그릴스와 함께 떠나는 탐험 생존 모험기. 전세계 곳곳에 있는 위험한 지역, 혹독한 환경에서 생존하는 방법을 보여준다.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">닫기</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 다큐 6 모달 -->
+        <div class="modal fade" id="doc6" tabindex="-1" aria-labelledby="doc6Label" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="doc6Label">Wild Wild Country</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                    <div class="modal-body">
+                        <div class="ratio ratio-16x9">
+                            <iframe src="https://www.youtube.com/embed/hBLS_OM6Puk?si=h66jxLjDUcF77hM6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                        <h4>와일드 와일드 컨트리</h4>
+                        <p>논란의 여지가 있는 컬트 지도자가 오리건 사막에 유토피아 도시를 건설하자 지역 주민과의 갈등이 전국적인 스캔들로 확대됩니다.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">닫기</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h1 class="text-white fw-bold">애니메이션</h1>
+
+        <div id="aniCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <!-- 첫 번째 슬라이드 -->
+                <div class="carousel-item active">
+                    <div class="row">
+                        <!-- 카드 1 -->
+                        <div class="col-md-4 mb-4">
+                            <div class="card">
+                                <img th:src="@{/images/ani1.jpg}" class="card-img-top" alt="ani1" data-bs-toggle="modal" data-bs-target="#ani1" style="width: 100%; height: 600px; object-fit: cover;">
+                            </div>
+                        </div>
+
+                        <!-- 카드 2 -->
+                        <div class="col-md-4 mb-4">
+                            <div class="card">
+                                <img th:src="@{/images/ani2.jpg}" class="card-img-top" alt="ani2" data-bs-toggle="modal" data-bs-target="#ani2" style="width: 100%; height: 600px; object-fit: cover;">
+                            </div>
+                        </div>
+
+                        <!-- 카드 3 -->
+                        <div class="col-md-4 mb-4">
+                            <div class="card">
+                                <img th:src="@{/images/ani3.jpg}" class="card-img-top" alt="ani3 포스터" data-bs-toggle="modal" data-bs-target="#ani3" style="width: 100%; height: 600px; object-fit: cover;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 두 번째 슬라이드 -->
+                <div class="carousel-item">
+                    <div class="row">
+                        <!-- 카드 4 -->
+                        <div class="col-md-4 mb-4">
+                            <div class="card">
+                                <img th:src="@{/images/ani4.jpeg}" class="card-img-top" alt="ani4 포스터" data-bs-toggle="modal" data-bs-target="#ani4" style="width: 100%; height: 600px; object-fit: cover;">
+                            </div>
+                        </div>
+
+                        <!-- 카드 5 -->
+                        <div class="col-md-4 mb-4">
+                            <div class="card">
+                                <img th:src="@{/images/ani5.jpg}" class="card-img-top" alt="ani5 포스터" data-bs-toggle="modal" data-bs-target="#ani5" style="width: 100%; height: 600px; object-fit: cover;">
+                            </div>
+                        </div>
+
+                        <!-- 카드 6 -->
+                        <div class="col-md-4 mb-4">
+                            <div class="card">
+                                <img th:src="@{/images/ani6.jpg}" class="card-img-top" alt="ani6 포스터" data-bs-toggle="modal" data-bs-target="#ani6" style="width: 100%; height: 600px; object-fit: cover;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 좌우 화살표 (포스터 바깥으로 이동) -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#aniCarousel" data-bs-slide="prev" style="position: absolute; top: 50%; transform: translateY(-50%); left: -150px;">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#aniCarousel" data-bs-slide="next" style="position: absolute; top: 50%; transform: translateY(-50%); right: -150px;">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+        <!-- Modals (여기에도 영화 포스터에 맞는 모달을 추가해야 합니다) -->
+        <!-- 애니 1 모달 -->
+        <div class="modal fade" id="ani1" tabindex="-1" aria-labelledby="ani1Label" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="ani1Label">나 혼자만 레벨업</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="ratio ratio-16x9">
+                            <iframe src="https://www.youtube.com/embed/JRXcbcEnqEs?si=DsLQbkI_H4HSfFuN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                        <h4>나 혼자만 레벨업</h4>
+                        <p>재능 없는 만년 E급 헌터, 성진우. 기이한 던전에서 죽음을 목전에 두지만 위기는 언제나 기회와 함께 찾아오는 법! <br>전 세계 헌터 중 유일무이, 전무후무 시스템과 레벨업 능력을 각성한 진우. 세상을 향해 자유를 선포한다</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">닫기</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 애니 2 모달 -->
+        <div class="modal fade" id="ani2" tabindex="-1" aria-labelledby="ani2Label" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="ani2Label">마슐</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="ratio ratio-16x9">
+                            <iframe src="https://www.youtube.com/embed/5vbdNqkiAG0?si=LXvQ6Sy1rX7Z39-2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                        <h4>마슐</h4>
+                        <p>이세계는 마법이 모든 걸 정하는 마법사의 세계이다. 모든 존재들은 마법을 얼마나 쓸 수 있냐에 따라 모든 것이 정해지는데, 여기 마법을 쓰지 못하지만, 이에 비례해 힘과 신체능력을 아득히 초월하는 마법사(?)가 살고 있다.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">닫기</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 애니 3 모달 -->
+        <div class="modal fade" id="ani3" tabindex="-1" aria-labelledby="ani3Label" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="ani3Label">어둠의 실력자가 되고 싶어서!</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="ratio ratio-16x9">
+                            <iframe src="https://www.youtube.com/embed/ICQe7B_ObxI?si=eENmvHCYxNHEg6l3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                        <h4>어둠의 실력자가 되고 싶어서!</h4>
+                        <p>이세계에서 전생한 그는 간절한 꿈이었던 『어둠의 실력자』 설정을 즐기기 위해, 망상으로 만들어낸 『어둠의 교단』을 유린하려고 암약하기 시작했다.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">닫기</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 애니 4 모달 -->
+        <div class="modal fade" id="ani4" tabindex="-1" aria-labelledby="ani4Label" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="ani4Label">슬램 덩크</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="ratio ratio-16x9">
+                            <iframe src="https://www.youtube.com/embed/cGNUpsevAk4?si=zIv0Yp32TBlxQoSj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                        <h4>슬램덩크</h4>
+                        <p>강백호는 소연의 권유로 상북고의 농구부에 생떼를 써서 입단하게 된다. 무식하고 힘만 센 강백호는 입단 후 기초연습만 하게 되지만 소연의 가르침에 힘입어 농구에 대한 감각을 차차 익혀나간다.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">닫기</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 애니 5 모달 -->
+        <div class="modal fade" id="ani5" tabindex="-1" aria-labelledby="ani5Label" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="ani5Label">핀과 제이크의 어드벤처 타임</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="ratio ratio-16x9">
+                            <iframe src="https://www.youtube.com/embed/7hPB_1WhNps?si=rL8Bc56aMEo_OpQb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                        <h4>핀과 제이크의 어드벤처 타임</h4>
+                        <p>어린 핀과 그의 모양을 바꿀 수 있는 친구인 개 제이크는 멸망 이후의 우 랜드를 여행하며 일련의 초현실적인 모험을 겪습니다.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">닫기</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 애니 6 모달 -->
+        <div class="modal fade" id="ani6" tabindex="-1" aria-labelledby="ani6Label" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="ani6Label">미래소년 코난</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                    <div class="modal-body">
+                        <div class="ratio ratio-16x9">
+                            <iframe src="https://www.youtube.com/embed/wWRwnEAEklI?si=VimZVmYx4vfru-1E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                        <h4>미래소년 코난</h4>
+                        <p>가까운 미래, 인류는 과학 남용으로 멸망하고 소수만이 살아남는다. 태양 에너지의 비밀을 알고있는 라나를 구하고 레프카를 물리치기 위해 코난은 친구 포비와 함께 여정을 떠난다</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">닫기</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h1 class="text-white fw-bold">뉴스</h1>
+
+        <div id="newsCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <!-- 첫 번째 슬라이드 -->
+                <div class="carousel-item active">
+                    <div class="row">
+                        <!-- 카드 1 -->
+                        <div class="col-md-4 mb-4">
+                            <div class="card">
+                                <img th:src="@{/images/news1.jpg}" class="card-img-top" alt="news1" data-bs-toggle="modal" data-bs-target="#news1" style="width: 100%; height: 600px; object-fit: cover;">
+                            </div>
+                        </div>
+
+                        <!-- 카드 2 -->
+                        <div class="col-md-4 mb-4">
+                            <div class="card">
+                                <img th:src="@{/images/news2.jpg}" class="card-img-top" alt="doc2" data-bs-toggle="modal" data-bs-target="#news2" style="width: 100%; height: 600px; object-fit: cover;">
+                            </div>
+                        </div>
+
+                        <!-- 카드 3 -->
+                        <div class="col-md-4 mb-4">
+                            <div class="card">
+                                <img th:src="@{/images/news3.jpg}" class="card-img-top" alt="doc3 포스터" data-bs-toggle="modal" data-bs-target="#news3" style="width: 100%; height: 600px; object-fit: cover;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 두 번째 슬라이드 -->
+                <div class="carousel-item">
+                    <div class="row">
+                        <!-- 카드 4 -->
+                        <div class="col-md-4 mb-4">
+                            <div class="card">
+                                <img th:src="@{/images/news4.jpg}" class="card-img-top" alt="news4 포스터" data-bs-toggle="modal" data-bs-target="#news4" style="width: 100%; height: 600px; object-fit: cover;">
+                            </div>
+                        </div>
+
+                        <!-- 카드 5 -->
+                        <div class="col-md-4 mb-4">
+                            <div class="card">
+                                <img th:src="@{/images/news5.jpg}" class="card-img-top" alt="news5 포스터" data-bs-toggle="modal" data-bs-target="#news5" style="width: 100%; height: 600px; object-fit: cover;">
+                            </div>
+                        </div>
+
+                        <!-- 카드 6 -->
+                        <div class="col-md-4 mb-4">
+                            <div class="card">
+                                <img th:src="@{/images/news6.jpg}" class="card-img-top" alt="news6 포스터" data-bs-toggle="modal" data-bs-target="#news6" style="width: 100%; height: 600px; object-fit: cover;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 좌우 화살표 (포스터 바깥으로 이동) -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#newsCarousel" data-bs-slide="prev" style="position: absolute; top: 50%; transform: translateY(-50%); left: -150px;">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#newsCarousel" data-bs-slide="next" style="position: absolute; top: 50%; transform: translateY(-50%); right: -150px;">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+        <!-- Modals (여기에도 영화 포스터에 맞는 모달을 추가해야 합니다) -->
+        <!-- 뉴스 1 모달 -->
+        <div class="modal fade" id="news1" tabindex="-1" aria-labelledby="news1Label" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="news1Label">KBS 뉴스</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- 이미지에 링크 추가 -->
+                        <a href="https://www.youtube.com/@newskbs" target="_blank">
+                            <img src="./images/news1.jpg" class="img-fluid" alt="뉴스 관련 이미지">
+                        </a>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">닫기</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 뉴스 2 모달 -->
+        <div class="modal fade" id="news2" tabindex="-1" aria-labelledby="news2Label" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="news2Label">YTN 뉴스</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- 이미지에 링크 추가 -->
+                        <a href="https://www.youtube.com/@ytnnews24" target="_blank">
+                            <img src="./images/news2.jpg" class="img-fluid" alt="뉴스 관련 이미지">
+                        </a>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">닫기</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 뉴스 3 모달 -->
+        <div class="modal fade" id="news3" tabindex="-1" aria-labelledby="news3Label" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="news3Label">연합 뉴스</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- 이미지에 링크 추가 -->
+                        <a href="https://www.youtube.com/@yonhapnewstv23" target="_blank">
+                            <img src="./images/news3.jpg" class="img-fluid" alt="뉴스 관련 이미지">
+                        </a>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">닫기</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 뉴스 4 모달 -->
+        <div class="modal fade" id="news4" tabindex="-1" aria-labelledby="news4Label" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="news4Label">MBC 뉴스</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- 이미지에 링크 추가 -->
+                        <a href="https://www.youtube.com/@MBCNEWS11" target="_blank">
+                            <img src="./images/news4.jpg" class="img-fluid" alt="뉴스 관련 이미지">
+                        </a>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">닫기</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 뉴스 5 모달 -->
+        <div class="modal fade" id="news5" tabindex="-1" aria-labelledby="news5Label" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="news5Label">SBS 뉴스</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- 이미지에 링크 추가 -->
+                        <a href="https://www.youtube.com/@sbsnews8" target="_blank">
+                            <img src="./images/news5.jpg" class="img-fluid" alt="뉴스 관련 이미지">
+                        </a>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">닫기</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 뉴스 6 모달 -->
+        <div class="modal fade" id="news6" tabindex="-1" aria-labelledby="news6Label" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="news6Label">JTBC 뉴스</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- 이미지에 링크 추가 -->
+                        <a href="https://www.youtube.com/@jtbc_news" target="_blank">
+                            <img src="./images/news6.jpg" class="img-fluid" alt="뉴스 관련 이미지">
+                        </a>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">닫기</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h1 class="text-white fw-bold">교육</h1>
+
+        <div id="eduCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <!-- 첫 번째 슬라이드 -->
+                <div class="carousel-item active">
+                    <div class="row">
+                        <!-- 카드 1 -->
+                        <div class="col-md-4 mb-4">
+                            <div class="card">
+                                <img th:src="@{/images/study1.jpg}" class="card-img-top" alt="edu1" data-bs-toggle="modal" data-bs-target="#edu1" style="width: 100%; height: 600px; object-fit: cover;">
+                            </div>
+                        </div>
+
+                        <!-- 카드 2 -->
+                        <div class="col-md-4 mb-4">
+                            <div class="card">
+                                <img th:src="@{/images/study2.jpg}" class="card-img-top" alt="edu2" data-bs-toggle="modal" data-bs-target="#edu2" style="width: 100%; height: 600px; object-fit: cover;">
+                            </div>
+                        </div>
+
+                        <!-- 카드 3 -->
+                        <div class="col-md-4 mb-4">
+                            <div class="card">
+                                <img th:src="@{/images/study3.jpg}" class="card-img-top" alt="edu3 포스터" data-bs-toggle="modal" data-bs-target="#edu3" style="width: 100%; height: 600px; object-fit: cover;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 두 번째 슬라이드 -->
+                <div class="carousel-item">
+                    <div class="row">
+                        <!-- 카드 4 -->
+                        <div class="col-md-4 mb-4">
+                            <div class="card">
+                                <img th:src="@{/images/study4.jpg}" class="card-img-top" alt="edu4 포스터" data-bs-toggle="modal" data-bs-target="#edu4" style="width: 100%; height: 600px; object-fit: cover;">
+                            </div>
+                        </div>
+
+                        <!-- 카드 5 -->
+                        <div class="col-md-4 mb-4">
+                            <div class="card">
+                                <img th:src="@{/images/study5.jpg}" class="card-img-top" alt="edu5 포스터" data-bs-toggle="modal" data-bs-target="#edu5" style="width: 100%; height: 600px; object-fit: cover;">
+                            </div>
+                        </div>
+
+                        <!-- 카드 6 -->
+                        <div class="col-md-4 mb-4">
+                            <div class="card">
+                                <img th:src="@{/images/study6.jpg}" class="card-img-top" alt="edu6 포스터" data-bs-toggle="modal" data-bs-target="#edu6" style="width: 100%; height: 600px; object-fit: cover;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 좌우 화살표 (포스터 바깥으로 이동) -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#eduCarousel" data-bs-slide="prev" style="position: absolute; top: 50%; transform: translateY(-50%); left: -150px;">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#eduCarousel" data-bs-slide="next" style="position: absolute; top: 50%; transform: translateY(-50%); right: -150px;">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+        <!-- Modals (여기에도 영화 포스터에 맞는 모달을 추가해야 합니다) -->
+        <!-- 교육 1 모달 -->
+        <div class="modal fade" id="edu1" tabindex="-1" aria-labelledby="edu1Label" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="edu1Label">[메가스터디] 국어 강민철쌤 - 2025 강민철의 수능 국어 커리큘럼</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="ratio ratio-16x9">
+                            <iframe src="https://www.youtube.com/embed/azlO7ye4MrY?si=j5I5kleUTN6lfEUP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                        <h4>[메가스터디] 국어 강민철쌤 - 2025 강민철의 수능 국어 커리큘럼</h4>
+                        <p>국어 강민철 선생님의 2025 강민철의 수능 국어 커리큘럼 영상입니다.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">닫기</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 교육 2 모달 -->
+        <div class="modal fade" id="edu2" tabindex="-1" aria-labelledby="edu2Label" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="edu2Label">[메가스터디] 가장 강력한 공부법, 역사를 경험하다 - 수능 역사 이다지</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="ratio ratio-16x9">
+                            <iframe src="https://www.youtube.com/embed/ZN2r02yKllY?si=x-u3ajtQ0vtiSAgX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                        <h4>[메가스터디] 가장 강력한 공부법, 역사를 경험하다 - 수능 역사 이다지</h4>
+                        <p>역사를 마주하고 경험하게 하는 스토리텔링 <br>이다지로 몰입하라!</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">닫기</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 교육 3 모달 -->
+        <div class="modal fade" id="edu3" tabindex="-1" aria-labelledby="edu3Label" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="edu3Label">[메가스터디] “난 너희들의 T 니까” TRULY T, 조정식</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="ratio ratio-16x9">
+                            <iframe src="https://www.youtube.com/embed/bgBpkdEKKJ0?si=kASUTT5T5w2GX79v" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                        <h4>[메가스터디] “난 너희들의 T 니까” TRULY T, 조정식</h4>
+                        <p>공부하는 모든 아이들을 위한 <br>조정식T의 체계적 수능영어 학습.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">닫기</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 교육 4 모달 -->
+        <div class="modal fade" id="edu4" tabindex="-1" aria-labelledby="edu4Label" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="edu4Label">벌거벗은 한국사</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="ratio ratio-16x9">
+                            <iframe src="https://www.youtube.com/embed/Y-QgHlsB5Q0?si=Mzg7A2e_N_gSvGq4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                        <h4>벌거벗은 한국사</h4>
+                        <p>이번엔 한국사다! [벌거벗은 세계사] 제작진과 한국사 큰 별 최태성 선생님과 함께하는 쉽고 재밌는 한국사 스토리텔링쇼</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">닫기</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 교육 5 모달 -->
+        <div class="modal fade" id="edu5" tabindex="-1" aria-labelledby="edu5Label" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="edu5Label">메가스터디 고운쌤</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="ratio ratio-16x9">
+                            <iframe src="https://www.youtube.com/embed/zlLctOdor_M?si=-VXxmnsvzCrfSBhH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                        <h4>[메가스터디] 고운쌤</h4>
+                        <p>고운쌤이 직접 경험한 리얼한 문화지체 ⊙ܫ⊙
+                            지금 영상에서 만나 보세요!</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">닫기</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 교육 6 모달 -->
+        <div class="modal fade" id="edu6" tabindex="-1" aria-labelledby="edu6Label" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="edu6Label">벌거벗은 세계사</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                    <div class="modal-body">
+                        <div class="ratio ratio-16x9">
+                            <iframe src="https://www.youtube.com/embed/DWSnY8WX9vY?si=ehPZw35TBVpSUeC_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                        <h4>벌거벗은 세계사</h4>
+                        <p>전 세계  곳곳을 온택트로 둘러보며 각 나라의 명소르 살펴보고, 다야한 관점에서 우리가 몰랐던 세게의 역사를 파헤치는 프로그램</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">닫기</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h1 class="text-white fw-bold">스포츠</h1>
+
+        <div id="sportsCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <!-- 첫 번째 슬라이드 -->
+                <div class="carousel-item active">
+                    <div class="row">
+                        <!-- 카드 1 -->
+                        <div class="col-md-4 mb-4">
+                            <div class="card">
+                                <img th:src="@{/images/sport1.png}" class="card-img-top" alt="sports1" data-bs-toggle="modal" data-bs-target="#sports1" style="width: 100%; height: 600px; object-fit: cover;">
+                            </div>
+                        </div>
+
+                        <!-- 카드 2 -->
+                        <div class="col-md-4 mb-4">
+                            <div class="card">
+                                <img th:src="@{/images/sport2.jpg}" class="card-img-top" alt="sports2" data-bs-toggle="modal" data-bs-target="#sports2" style="width: 100%; height: 600px; object-fit: cover;">
+                            </div>
+                        </div>
+
+                        <!-- 카드 3 -->
+                        <div class="col-md-4 mb-4">
+                            <div class="card">
+                                <img th:src="@{/images/sport3.jpg}" class="card-img-top" alt="sports3 포스터" data-bs-toggle="modal" data-bs-target="#sports3" style="width: 100%; height: 600px; object-fit: cover;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 두 번째 슬라이드 -->
+                <div class="carousel-item">
+                    <div class="row">
+                        <!-- 카드 4 -->
+                        <div class="col-md-4 mb-4">
+                            <div class="card">
+                                <img th:src="@{/images/sport4.jpg}" class="card-img-top" alt="sports4 포스터" data-bs-toggle="modal" data-bs-target="#sports4" style="width: 100%; height: 600px; object-fit: cover;">
+                            </div>
+                        </div>
+
+                        <!-- 카드 5 -->
+                        <div class="col-md-4 mb-4">
+                            <div class="card">
+                                <img th:src="@{/images/sport5.jpg}" class="card-img-top" alt="sports5 포스터" data-bs-toggle="modal" data-bs-target="#sports5" style="width: 100%; height: 600px; object-fit: cover;">
+                            </div>
+                        </div>
+
+                        <!-- 카드 6 -->
+                        <div class="col-md-4 mb-4">
+                            <div class="card">
+                                <img th:src="@{/images/sport6.jpg}" class="card-img-top" alt="sports6 포스터" data-bs-toggle="modal" data-bs-target="#sports6" style="width: 100%; height: 600px; object-fit: cover;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 좌우 화살표 (포스터 바깥으로 이동) -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#sportsCarousel" data-bs-slide="prev" style="position: absolute; top: 50%; transform: translateY(-50%); left: -150px;">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#sportsCarousel" data-bs-slide="next" style="position: absolute; top: 50%; transform: translateY(-50%); right: -150px;">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+        <!-- Modals (여기에도 영화 포스터에 맞는 모달을 추가해야 합니다) -->
+        <!-- 스포츠 1 모달 -->
+        <div class="modal fade" id="sports1" tabindex="-1" aria-labelledby="sports1Label" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="sports1Label">스포티비</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- 이미지에 링크 추가 -->
+                        <a href="https://www.youtube.com/@SPOTV" target="_blank">
+                            <img th:src="@{/images/sport1.png}" class="img-fluid" alt="뉴스 관련 이미지">
+                        </a>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">닫기</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 스포츠 2 모달 -->
+        <div class="modal fade" id="sports2" tabindex="-1" aria-labelledby="sports2Label" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="sports2Label">SBS 스포츠</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- 이미지에 링크 추가 -->
+                        <a href="https://www.youtube.com/@sbssportsnow" target="_blank">
+                            <img th:src="@{/images/sport2.jpg}" class="img-fluid" alt="뉴스 관련 이미지">
+                        </a>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">닫기</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 스포츠 3 모달 -->
+        <div class="modal fade" id="sports3" tabindex="-1" aria-labelledby="sports3Label" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="sports3Label">쿠팡플레이 스포츠</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- 이미지에 링크 추가 -->
+                        <a href="https://www.youtube.com/@CoupangPlaySports" target="_blank">
+                            <img th:src="@{/images/sport3.jpg}" class="img-fluid" alt="뉴스 관련 이미지">
+                        </a>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">닫기</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 스포츠 4 모달 -->
+        <div class="modal fade" id="sports4" tabindex="-1" aria-labelledby="sports4Label" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="sports4Label">KBL</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- 이미지에 링크 추가 -->
+                        <a href="https://www.youtube.com/@onkbl" target="_blank">
+                            <img th:src="@{/images/sport4.jpg}" class="img-fluid" alt="뉴스 관련 이미지">
+                        </a>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">닫기</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 스포츠 5 모달 -->
+        <div class="modal fade" id="sports5" tabindex="-1" aria-labelledby="sports5Label" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="sports5Label">KBO</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- 이미지에 링크 추가 -->
+                        <a href="https://www.youtube.com/@KBO1982" target="_blank">
+                            <img th:src="@{/images/sport5.jpg}" class="img-fluid" alt="뉴스 관련 이미지">
+                        </a>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">닫기</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 스포츠 6 모달 -->
+        <div class="modal fade" id="sports6" tabindex="-1" aria-labelledby="sports6Label" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="sports6Label">분데스리가</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- 이미지에 링크 추가 -->
+                        <a href="https://www.youtube.com/@bundesliga" target="_blank">
+                            <img th:src="@{/images/sport6.jpg}" class="img-fluid" alt="뉴스 관련 이미지">
+                        </a>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">닫기</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

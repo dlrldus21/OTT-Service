@@ -1,0 +1,64 @@
+<!-- navigation -->
+<nav th:fragment="navbarFragment" class="custom-navbar navbar navbar-expand-md navbar-dark">
+    <div class="container-fluid justify-content-center">
+        <a th:href="@{/}"><img th:src="@{/images/eplogo.png}" alt="로고" style="width: 150px; height: 50px;"></a>
+        <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="offcanvas" data-bs-target="#menubar" aria-controls="menubar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="menubar" aria-labelledby="menubarLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="menubarLabel">메뉴</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar-nav mx-auto mb-2 mb-md-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" th:href="@{/}">홈</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/index}">서비스</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/index2}">작품목록</a>
+                    </li>
+<!--                    <li class="nav-item">-->
+<!--                        <a class="nav-link" th:href="@{/index-j}">몰라</a>-->
+<!--                    </li>-->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="faqDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            고객센터
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="faqDropdown">
+                            <li><a class="dropdown-item" th:href="@{/motd}">공지사항</a></li>
+                            <li><a class="dropdown-item" th:href="@{/question/list}">게시판</a></li>
+                            <li th:if="${loginMember != null and loginMember.grade == 'admin'}"><a class="dropdown-item" th:href="@{/admin-page}">관리자 페이지</a></li>
+                        </ul>
+                    </li>
+                    <!-- 로그인 버튼을 메뉴 항목으로 추가 -->
+                    <li class="nav-item d-md-none">
+                        <!-- 수정됨: loginMember가 null이 아닌 경우에만 grade를 확인 -->
+                        <div th:if="${loginMember != null}">
+                            <a class="nav-link" th:href="@{/profile}">내 정보</a>
+                        </div>
+                        <div th:if="${loginMember == null}">
+                            <a class="nav-link" th:href="@{/login}">로그인</a>
+                        </div>
+                        <form th:if="${loginMember != null}" method="post" th:action="@{/logout}">
+                            <button class="nav-link">로그아웃</button>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div th:if="${loginMember}">
+            <a class="btn btn-outline-light ms-3 d-none d-md-block" th:href="@{/profile}">내 정보</a>
+        </div>
+        <form th:if="${loginMember}" method="post" th:action="@{/logout}">
+            <button class="btn btn-outline-light ms-3 d-none d-md-block" type="submit">로그아웃</button>
+        </form>
+        <div th:if="${loginMember == null}">
+            <a th:href="@{/login}" class="btn btn-outline-light ms-3 d-none d-md-block">로그인</a>
+        </div>
+    </div>
+</nav>
+<!-- navigation end -->
